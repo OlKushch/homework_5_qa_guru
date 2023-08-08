@@ -28,12 +28,21 @@ def test_selen(browser_test):
     browser.element('.react-datepicker__day--022').click()
     browser.element('#subjectsInput').type('English').press_enter()
     browser.element('[for=hobbies-checkbox-1').click()
-    browser.element('#uploadPicture').send_keys(os.path.abspath('test_1.jpg'))
+    browser.element('#uploadPicture').send_keys(os.path.abspath('resources/test_1.jpg'))
     browser.element('.col-md-9 [id = currentAddress]').type('SPB')
     browser.element('#react-select-3-input').type('NCR').press_enter()
     browser.element('#react-select-4-input').type('Delhi').press_enter()
     browser.element('.col-sm-12 [id=submit]').click()
     browser.element('.modal-header [id=example-modal-sizes-title-lg]').should(have.text('Thanks for submitting the form'))
+    browser.element('.table').should(have.text('kushch olga'
+                                               and 'test_qa@qmail.com'
+                                               and 'Male'
+                                               and '9119291972'
+                                               and '22 Sep 1996'
+                                               and 'English'
+                                               and 'Sport'
+                                               and 'SPB'
+                                               and 'NCR Delhi' ))
 
 
 
